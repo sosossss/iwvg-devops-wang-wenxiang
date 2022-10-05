@@ -1,5 +1,6 @@
 package es.upm.miw.iwvg_devops.code;
 
+
 /**
  * Conceptos: Las fracciones propias son aquellas cuyo numerador es menor que el denominador
  * <p>
@@ -65,5 +66,6 @@ public class Fraction {
                 "numerator=" + numerator +
                 ", denominator=" + denominator +
                 '}';
+
     }
 }
