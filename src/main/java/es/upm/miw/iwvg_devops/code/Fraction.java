@@ -76,7 +76,7 @@ public class Fraction {
         int y;
 
         x = (numerator * fraction.denominator) + (fraction.numerator * denominator);
-        y =  denominator + fraction.denominator;
+        y =  denominator * fraction.denominator;
         return new Fraction(x,y);
     }
 
