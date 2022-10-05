@@ -3,6 +3,7 @@ package es.upm.miw.iwvg_devops.code;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
@@ -52,5 +53,42 @@ public class FractionTest {
     void testToString(){
         String fractionTest = "Fraction{numerator=10, denominator=20}";
         assertEquals(fractionTest, fraction.toString());
+    }
+
+    @Test
+    void testIsProper(){
+        assertTrue(this.fraction.isProper());
+    }
+
+    @Test
+    void testIsImproper(){
+        assertFalse(this.fraction.isImproper());
+    }
+
+    @Test
+    void testIsEquivalent(){
+        Fraction fractionTest = new Fraction(10,20);
+        assertTrue(this.fraction.isEquivalent(fractionTest));
+    }
+
+    @Test
+    void testAdd(){
+        Fraction fractionTest = new Fraction(10, 20);
+        assertEquals(400, this.fraction.add(fractionTest).getNumerator());
+        assertEquals(400, this.fraction.add(fractionTest).getDenominator());
+    }
+
+    @Test
+    void testMultiply(){
+        Fraction fractionTest = new Fraction(10,20);
+        assertEquals(100, this.fraction.multiply(fractionTest).getNumerator());
+        assertEquals(400, this.fraction.multiply(fractionTest).getDenominator());
+    }
+
+    @Test
+    void testDivide(){
+        Fraction fractionTest = new Fraction(10,20);
+        assertEquals(200, this.fraction.divide(fractionTest).getNumerator());
+        assertEquals(200, this.fraction.divide(fractionTest).getDenominator());
     }
 }
