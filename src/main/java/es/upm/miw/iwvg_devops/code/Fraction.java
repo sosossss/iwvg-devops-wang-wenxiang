@@ -98,6 +98,21 @@ public class Fraction {
         return new Fraction(x, y);
     }
 
+    public Fraction reduce(){
+        int x = this.numerator;
+        int y = this.denominator;
+        int t;
+
+        while (y != 0){
+            t = x % y;
+            x = y;
+            y = t;
+        }
+        numerator = numerator/x;
+        denominator = denominator/x;
+        return new Fraction(numerator,denominator);
+    }
+
     @Override
     public String toString() {
         return "Fraction{" +

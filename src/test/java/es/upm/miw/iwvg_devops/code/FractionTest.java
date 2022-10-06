@@ -91,4 +91,10 @@ public class FractionTest {
         assertEquals(200, this.fraction.divide(fractionTest).getNumerator());
         assertEquals(200, this.fraction.divide(fractionTest).getDenominator());
     }
+
+    @Test
+    void testReduce(){
+        assertEquals(1,this.fraction.reduce().getNumerator());
+        assertEquals(2,this.fraction.reduce().getDenominator());
+    }
 }
