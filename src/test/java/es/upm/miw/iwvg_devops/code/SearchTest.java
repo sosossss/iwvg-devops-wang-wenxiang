@@ -26,4 +26,9 @@ public class SearchTest {
         assertEquals(1,new Search().findFirstProperFractionByUserId("3").getNumerator());
         assertEquals(5,new Search().findFirstProperFractionByUserId("3").getDenominator());
     }
+
+    @Test
+    void testFindDecimalFractionByUserName(){
+        assertEquals(List.of(2.0, -0.2, 0.5, 1.3333333333333333), new Search().findDecimalFractionByUserName("Ana").collect(Collectors.toList()));
+    }
 }
