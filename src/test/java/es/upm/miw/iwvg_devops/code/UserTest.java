@@ -13,12 +13,12 @@ public class UserTest {
     private User user;
 
     @BeforeEach
-    public void Constructor(){
+    public void Constructor() {
         this.user = new User("1", "Wenxiang", "Wang", new ArrayList<>());
     }
 
     @Test
-    public void testEmptyConstructor(){
+    public void testEmptyConstructor() {
         user = new User();
         assertNull(user.getId());
         assertNull(user.getName());
@@ -27,7 +27,7 @@ public class UserTest {
     }
 
     @Test
-    void testGetId(){
+    void testGetId() {
         assertEquals("1", this.user.getId());
     }
 
@@ -54,12 +54,12 @@ public class UserTest {
     }
 
     @Test
-    void testGetFractions(){
+    void testGetFractions() {
         assertEquals(new ArrayList<>(), user.getFractions());
     }
 
     @Test
-    void testSetFractions(){
+    void testSetFractions() {
         Fraction fraction = new Fraction();
         ArrayList<Fraction> fractions = new ArrayList<>();
         fractions.add(fraction);
@@ -70,14 +70,14 @@ public class UserTest {
     }
 
     @Test
-    void testAddFraction(){
+    void testAddFraction() {
         Fraction fraction = new Fraction();
         user.addFraction(fraction);
         assertEquals(1, this.user.getFractions().size());
     }
 
     @Test
-    void testFullName(){
+    void testFullName() {
         assertEquals("Wenxiang Wang", this.user.fullName());
     }
 

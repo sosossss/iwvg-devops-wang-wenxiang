@@ -68,16 +68,16 @@ public class Fraction {
     }
 
     public boolean isEquivalent(Fraction fraction) {
-        return numerator * fraction.denominator ==  denominator * fraction.numerator;
+        return numerator * fraction.denominator == denominator * fraction.numerator;
     }
 
-    public Fraction add(Fraction fraction){
+    public Fraction add(Fraction fraction) {
         int x;
         int y;
 
         x = (numerator * fraction.denominator) + (fraction.numerator * denominator);
-        y =  denominator * fraction.denominator;
-        return new Fraction(x,y);
+        y = denominator * fraction.denominator;
+        return new Fraction(x, y);
     }
 
     public Fraction multiply(Fraction fraction) {
@@ -96,6 +96,25 @@ public class Fraction {
         x = this.numerator * fraction.denominator;
         y = this.denominator * fraction.numerator;
         return new Fraction(x, y);
+    }
+
+    public Fraction reduce() {
+        int x = this.numerator;
+        int y = this.denominator;
+        int t;
+
+        while (y != 0) {
+            t = x % y;
+            x = y;
+            y = t;
+        }
+        numerator = numerator / x;
+        denominator = denominator / x;
+        return new Fraction(numerator, denominator);
+    }
+
+    public boolean isLegal() {
+        return this.denominator != 0;
     }
 
     @Override
