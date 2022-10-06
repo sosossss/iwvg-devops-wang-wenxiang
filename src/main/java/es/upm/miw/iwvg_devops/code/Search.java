@@ -17,6 +17,14 @@ public class Search {
         return new UsersDatabase().findAll()
                 .filter(user -> user.getFractions().stream().anyMatch(Fraction::isProper))
                 .map(User::getId);
+    }
 
+    public Fraction findFirstProperFractionByUserId(String id){
+        return new UsersDatabase().findAll()
+                .filter(user -> user.getId().equals(id))
+                .flatMap(user -> user.getFractions().stream())
+                .filter(Fraction::isProper)
+                .findFirst()
+                .orElseThrow();
     }
 }
