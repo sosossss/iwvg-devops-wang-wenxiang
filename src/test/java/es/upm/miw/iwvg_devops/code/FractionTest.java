@@ -97,4 +97,10 @@ public class FractionTest {
         assertEquals(1,this.fraction.reduce().getNumerator());
         assertEquals(2,this.fraction.reduce().getDenominator());
     }
+
+    @Test
+    void testIsLegal(){
+        Fraction fractionTest = new Fraction(1,0);
+        assertFalse(fractionTest.isLegal());
+    }
 }

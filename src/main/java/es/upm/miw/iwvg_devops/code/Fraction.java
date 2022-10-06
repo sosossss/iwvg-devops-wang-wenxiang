@@ -113,6 +113,10 @@ public class Fraction {
         return new Fraction(numerator,denominator);
     }
 
+    public boolean isLegal(){
+        return this.denominator != 0;
+    }
+
     @Override
     public String toString() {
         return "Fraction{" +
